@@ -20,6 +20,7 @@ main {
     margin-left: -2.3vw;
     text-align: center;
     color: white;
+    font-size: 2em;
 }
 #note-index-list li:hover {
     text-decoration: underline;
