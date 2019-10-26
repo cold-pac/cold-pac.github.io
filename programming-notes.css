@@ -1,0 +1,46 @@
+main {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#note-index {
+    background-color: black;
+}
+#note-index-list {
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    margin: 0;
+}
+#note-index-list li {
+    list-style: none;
+    position: relative;
+    right: 5px;
+    padding: 3vh;
+    width: 100%;
+    margin-left: -2.3vw;
+    text-align: center;
+    color: white;
+}
+#note-index-list li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+#note-index-list li:nth-child(1n) {
+    background: #ccc595;
+}
+#note-index-list li:nth-child(2n) {
+    background: teal;
+}
+#note-index-list li:nth-child(3n) {
+    background: firebrick;
+}
+#note-index-list li:nth-child(4n) {
+    background: coral;
+}
+#note-index-list li:nth-child(5n) {
+    background: indianred;
+}
