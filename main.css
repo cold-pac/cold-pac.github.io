@@ -33,3 +33,10 @@ header div:hover {
     background-color: aquamarine;
     cursor: pointer;
 }
+
+@media (orientation:portrait) {
+    header div {
+        font-size: 2em;
+        position: relative;
+    }
+}
