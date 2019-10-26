@@ -4,6 +4,26 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="main.css">
     <title>Cold-Pac</title>
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                type: "GET",
+                dataType: "xml",
+                url: 'https://www.goodreads.com/search.xml?key=pka4aF6uHmWLzzmIlTPdw&q=Ender%27s+Game',
+                success: function (data) {
+                    console.log(data);
+                },
+                error: function (errorMessage) {
+                    alert("failed");
+                }
+            });
+        });
+    </script>
 </head>
 <body>
 <header><div><a href = "index.html">About Me</a></div><div><a href="programming-notes.html">Programming Notes</a></div><div><a href="projects.html">Projects</a></div><div><a href = "#">Book List</a></div></header>
