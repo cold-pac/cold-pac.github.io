@@ -18,7 +18,7 @@
                     if (!(/Notes/.test(responseAsJson[i].name) || /cold-pac.github.io/.test(responseAsJson[i].name))) {
                         document.getElementById("project-container").innerHTML +=
                             `<div class = 'projects' id = ${responseAsJson[i].name}>
-                                <a href='cold-pac.github.io'+${responseAsJson[i].name} target="_blank">
+                                <a href='https://cold-pac.github.io/${responseAsJson[i].name}' target="_blank">
                                             <span class = 'name'>${responseAsJson[i].name}</span>
                                             <span class = 'description'>${responseAsJson[i].description}</span>
                                 </a>
