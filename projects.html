@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="projects.css">
     <title>Cold-Pac</title>
     <script>
+        let randomBG;
         fetch('https://api.github.com/users/cold-pac/repos')
             .then(function(response){
                  return response.json();
@@ -13,6 +14,7 @@
             .then(function(responseAsJson) {
                 console.log(responseAsJson);
                 for (let i = 0; i < responseAsJson.length; i++) {
+                    randomBG = Math.random()*1000;
                     if (!(/Notes/.test(responseAsJson[i].name) || /cold-pac.github.io/.test(responseAsJson[i].name))) {
                         document.getElementById("project-container").innerHTML +=
                             `<div class = 'projects' id = ${responseAsJson[i].name}>
@@ -31,7 +33,7 @@
     </script>
 </head>
 <body>
-<header><div><a href = "index.html">About Me</a></div><div><a href="programming-notes.html">Programming Notes</a></div><div><a href="#">Projects</a></div><div><a href = "booklist.html">Book List</a></div></header>
+<header><div><a href = "index.html">About Me</a></div><div><a href="programming-notes.html">Programming Notes</a></div><div><a>Projects</a></div><div><a href = "booklist.html">Book List</a></div></header>
 <main>
     <div id = "project-container"></div>
 </main>

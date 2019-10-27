@@ -15,6 +15,42 @@ main {
     display: flex;
     flex-direction: column;
 }
+.projects:nth-child(even) {
+    background: palegoldenrod;
+}
+.projects:nth-child(odd){
+    background: antiquewhite;
+}
+.projects:nth-child(1n) {
+    background: ghostwhite;
+}
+.projects:nth-child(2n) {
+    background: indianred;
+}
+.projects:nth-child(3n){
+    background: aliceblue;
+}
+.projects:nth-child(4n) {
+    background: cadetblue;
+}
+.projects:nth-child(5n) {
+    background: teal;
+}
+.projects:nth-child(6n) {
+    background: paleturquoise;
+}
+.projects:nth-child(2n) a{
+    color: white;!important;
+}
+.projects:nth-child(4n) a{
+    color: white;!important;
+}
+.projects:nth-child(5n) a{
+    color: white;!important;
+}
+.projects:nth-child(6n) a{
+    color: black;!important;
+}
 .names {
     display: block;
 }
@@ -29,7 +65,7 @@ main {
     width: 20vw;
     margin: 0;
 }
-a:hover {
+#project-container a:hover {
     border-left: firebrick 3px solid;
 }
 #project-container {
