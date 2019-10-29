@@ -2,7 +2,6 @@ html, body {
     height: 100%;
     width: 100%;
     margin: 0;
-    overflow: hidden;
 }
 header {
     width: 100vw;
@@ -14,8 +13,11 @@ header {
 }
 header div {
     padding: 1.25vh;
+    font-size: 16px;
     padding-right: 0;
     padding-left: 0;
+    font-family: Cambria, serif;
+    margin: 0;
 }
 header div a {
     height: 100%;
