@@ -8,12 +8,13 @@ main {
 }
 .projects {
    // background: blue;
-    width: 20vw;
-    text-align: center;
-    padding: 1em;
+    text-align: left;
     font-size: 3vh;
     display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 .projects:nth-child(even) {
@@ -53,7 +54,7 @@ main {
     color: black;!important;
 }
 .names {
-    display: block;
+    //display: block;
 }
 .description {
     font-size: 1.5vh;
@@ -62,16 +63,23 @@ main {
 #project-container a {
    // background: #ccc595;
     height: 100%;
-    padding: 0.5em;
+    padding: 1vh;
     width: 20vw;
     margin: 0;
 }
 #project-container a:hover {
-    border-left: firebrick 3px solid;
+    background-color: #ccc595;
 }
 #project-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 14px;
+    grid-gap: 1vh;
     justify-content: left;
+}
+
+@media(orientation:portrait) {
+    #project-container {
+        width: 100vw;
+        margin: 10px;
+    }
 }

@@ -10,6 +10,10 @@ main {
 }
 #bio {
     font-size: 1.3em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50vw;
 }
 h1 {
     color: #282625;
@@ -18,27 +22,12 @@ h1 {
     border-color: #bf7a4c;
     border-style: solid;
     background-color: #bf7a4c;
+    text-align: left;
 }
 img{
     margin-top: 50px;
     width: 30vw;
 }
-a:hover {
-    text-decoration: none;
-    color: black;
-}
-header div {
-    padding: 1.06vh;
-    padding-top: 1.04vh;
-    padding-bottom: 0.9vh;
-    font-size: 16px;
-    padding-right: 0;
-    padding-left: 0;
-    font-family: Cambria, serif;
-    margin-bottom: 0;
-    margin-left: 3px;
-}
-
 p {
     margin: 40px;
 }
@@ -47,5 +36,15 @@ p {
     header div {
         font-size: 2em;
         position: relative;
+    }
+    #bio {
+        flex-direction: column;
+        width: 60vw;
+        font-size: 2em;
+    }
+}
+@media(max-width: 900px) {
+    #bio {
+        flex-direction: column;
     }
 }
