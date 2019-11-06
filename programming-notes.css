@@ -49,10 +49,11 @@ main {
 
     }
     #note-index {
-        width: 100%;
+        width: 80vw;
         height: 98.5vh;
         position: relative;
-        top: 1.5vh;
+        right: 2vw;
+        top: 30%;
     }
     #note-index-list {
         position: relative;

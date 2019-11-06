@@ -79,7 +79,18 @@ main {
 
 @media(orientation:portrait) {
     #project-container {
-        width: 100vw;
+        width: 90vw;
         margin: 10px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: 3vh;
     }
+    #project-container .projects {
+        width: 100%;
+    }
+    #project-container .projects a {
+        width: 100%;
+    }
+
 }
