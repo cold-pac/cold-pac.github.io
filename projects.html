@@ -15,7 +15,7 @@
                 console.log(responseAsJson);
                 for (let i = 0; i < responseAsJson.length; i++) {
                     randomBG = Math.random()*1000;
-                    if (!(/Notes/.test(responseAsJson[i].name) || /cold-pac.github.io/.test(responseAsJson[i].name))) {
+                    if (!(/Notes/.test(responseAsJson[i].name) || /cold-pac.github.io/.test(responseAsJson[i].name) || /FullStack/.test(responseAsJson[i].name))) {
                         document.getElementById("project-container").innerHTML +=
                             `<div class = 'projects' id = ${responseAsJson[i].name}>
                                 <a href='https://cold-pac.github.io/${responseAsJson[i].name}' target="_blank">
