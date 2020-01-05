@@ -14,7 +14,7 @@
 <header><div><a>About Me</a></div><div><a href="programming-notes.html">Programming Notes</a></div><div><a href="projects.html">Projects</a></div></header>
 <main>
 
-    <figure><img alt = "profile picture" src="files/profilepicture.PNG"></figure><figcaption> cold-pac </figcaption>
+    <figure><img alt = "profile picture" src="files/profilepicture.PNG"><figcaption> cold-pac </figcaption></figure>
 
 
     <div style="margin:50px" id = "bio">
@@ -43,6 +43,17 @@
         </div>
     </div>
     </main>
-
+    <div id = "welcome-message"><button>X</button><div>Hello</div></div>
+    <audio id = "music">
+        <source src="files/Music/GTA IV Loading Screen Theme Song.mp3">
+    </audio>
+    <script>
+        window.onload =  () => {
+            document.querySelector("button").onclick = () =>  {
+                document.getElementById("music").play();
+                document.getElementById("welcome-message").style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>

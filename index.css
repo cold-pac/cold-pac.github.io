@@ -31,7 +31,31 @@ img{
 p {
     margin: 40px;
 }
-
+#welcome-message {
+    background-color: cadetblue;
+    color: white;
+    height: 200px;
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -250px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr 5fr;
+}
+#welcome-message button {
+    grid-column-start: 5;
+    grid-column-end: 6;
+    justify-self: right;
+    cursor: pointer;
+}
+#welcome-message div {
+    grid-column: 1/6;
+    place-self: center;
+    font-size: 2em;
+}
 @media (orientation:portrait) {
     header div {
         font-size: 2em;
