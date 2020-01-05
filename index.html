@@ -8,7 +8,14 @@
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="index.css">
     <title>Cold-Pac</title>
-
+    <script>
+        window.onload =  () => {
+            document.querySelector("button").onclick = () =>  {
+                document.getElementById("music").play();
+                document.getElementById("welcome-message").style.display = "none";
+            }
+        }
+    </script>
 </head>
 <body>
 <header><div><a>About Me</a></div><div><a href="programming-notes.html">Programming Notes</a></div><div><a href="projects.html">Projects</a></div></header>
@@ -47,13 +54,5 @@
     <audio id = "music">
         <source src="files/Music/GTA IV Loading Screen Theme Song.mp3">
     </audio>
-    <script>
-        window.onload =  () => {
-            document.querySelector("button").onclick = () =>  {
-                document.getElementById("music").play();
-                document.getElementById("welcome-message").style.display = "none";
-            }
-        }
-    </script>
 </body>
 </html>
