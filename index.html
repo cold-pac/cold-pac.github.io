@@ -7,25 +7,17 @@
 
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="index.css">
-    <title>Cold-Pac</title>
-    <script>
-        window.onload =  () => {
-            document.querySelector("button").onclick = () =>  {
-                document.getElementById("music").play();
-                document.getElementById("welcome-message").style.display = "none";
-            }
-        }
-    </script>
+    <title>Welcome</title>
+
 </head>
 <body>
+
 <header><div><a>About Me</a></div><div><a href="programming-notes.html">Programming Notes</a></div><div><a href="projects.html">Projects</a></div></header>
+
 <main>
+    <figure><img alt = "profile picture" src="files/profilepicture.PNG"><figcaption> Erol Cimen </figcaption></figure>
 
-    <figure><img alt = "profile picture" src="files/profilepicture.PNG"><figcaption> cold-pac </figcaption></figure>
-
-
-    <div style="margin:50px" id = "bio">
-
+    <div id = "bio">
         <div>
             <p class="list">
                 Currently doing:
@@ -33,26 +25,25 @@
             <hr/>
             <ol>
                 <li>Free Code Camp course</li>
-                <li>Machine learning pre-work (Python)</li>
-            </ol>
-        </div>
-
-        <div>
-            <p class= "list">
-            To do:
-            </p>
-            <hr/>
-            <ol>
-                <li>Helsinki web-dev course</li>
-                <li>CS subjects as Gen-Eds next year</li>
-                <li>Audit ML course next year </li>
+                <li>Machine Learning I</li>
+                <li>University of Helsinki's Full Stack Open 2019</li>
             </ol>
         </div>
     </div>
-    </main>
-    <div id = "welcome-message"><button>X</button><div>Hello</div></div>
-    <audio id = "music">
+</main>
+
+    <audio id = "GTA IV Theme">
         <source src="files/Music/GTA IV Loading Screen Theme Song.mp3">
     </audio>
+    <audio id = "Fallout New Vegas Menu Music">
+        <source src="files/Music/Fallout%20New%20Vegas%20Main%20Theme%20Song.mp3">
+    </audio>
+    <script>
+        window.onload =  () => {
+            document.querySelector("button").onclick = () =>  {
+                Array.from(document.getElementsByTagName("audio"))[Math.floor(Math.random()*document.getElementsByTagName("audio").length)].play();
+            }
+        }
+    </script>
 </body>
 </html>
