@@ -93,6 +93,10 @@ p {
         width: 60vw;
         font-size: 2em;
     }
+    #music-bar-container {
+        width: 100vw;
+        font-size: 2vh;
+    }
 }
 @media(max-width: 900px) {
     #bio {

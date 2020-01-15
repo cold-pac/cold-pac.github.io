@@ -139,7 +139,8 @@
            document.getElementById("pause").addEventListener('click', pause);
 
            let skip = () => {
-               pause(); //can't set the currentTime to 0 when the audio is still playing
+               //pause(); //can't set the currentTime to 0 when the audio is still playing
+               Array.from(document.getElementsByTagName("audio")).forEach((elem) => elem.pause()); //doing this directly rather than pause() to avoid a setPlayingStatus call
                audioElems.forEach(elem => elem.currentTime = 0);
                play();
            };
