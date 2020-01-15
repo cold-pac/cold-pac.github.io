@@ -54,6 +54,7 @@ p {
     flex-direction: row;
     justify-content: space-evenly;
     cursor: grab;
+    font-family: Monospace, serif;
 }
 #music-bar-container:active {
     cursor: grabbing;
