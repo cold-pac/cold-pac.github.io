@@ -53,6 +53,10 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    cursor: grab;
+}
+#music-bar-container:active {
+    cursor: grabbing;
 }
 #player-options {
     //background: fuchsia;
