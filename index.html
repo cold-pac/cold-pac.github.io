@@ -112,7 +112,6 @@
                 }, 100);
             } else {
                 clearInterval(spinningInterval);
-                document.getElementById('playing-status').innerHTML = "paused";
             }
         };
 
@@ -134,13 +133,18 @@
            let pause = () => {
                Array.from(document.getElementsByTagName("audio")).forEach((elem) => elem.pause());
                setPlayingStatus(false);
+               document.getElementById('playing-status').innerHTML = "paused";
            };
 
            document.getElementById("pause").addEventListener('click', pause);
 
            let skip = () => {
                //pause(); //can't set the currentTime to 0 when the audio is still playing
-               Array.from(document.getElementsByTagName("audio")).forEach((elem) => elem.pause()); //doing this directly rather than pause() to avoid a setPlayingStatus call
+               /* can't use pause() without setting playing status bar to "paused" before playing next song, so have to
+               pause all audio here and clear the interval with setPlayingStatus(false)
+                */
+               Array.from(document.getElementsByTagName("audio")).forEach((elem) => elem.pause());
+               setPlayingStatus(false);
                audioElems.forEach(elem => elem.currentTime = 0);
                play();
            };
