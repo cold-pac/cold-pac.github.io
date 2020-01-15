@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
 
     <link href="https://fonts.googleapis.com/css?family=Vollkorn+SC" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet">
 
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="index.css">
@@ -11,8 +12,18 @@
 
 </head>
 <body>
-
 <header><div><a>About Me</a></div><div><a href="programming-notes.html">Programming Notes</a></div><div><a href="projects.html">Projects</a></div></header>
+
+<div id="music-bar">
+    <div id="music-bar-container">
+        <div id = "player-options">
+            <span id = "play"><i class="fas fa-play"></i></span>
+            <span id="pause"><i class="fas fa-pause"></i></span>
+            <span id="skip"><i class="fas fa-step-forward"></i></span>
+        </div>
+        <div id = "playing-status">paused</div>
+    </div>
+</div>
 
 <main>
     <figure><img alt = "profile picture" src="files/profilepicture.PNG"><figcaption> Erol Cimen </figcaption></figure>
@@ -39,11 +50,55 @@
         <source src="files/Music/Fallout%20New%20Vegas%20Main%20Theme%20Song.mp3">
     </audio>
     <script>
-        window.onload =  () => {
-            document.querySelector("button").onclick = () =>  {
-                Array.from(document.getElementsByTagName("audio"))[Math.floor(Math.random()*document.getElementsByTagName("audio").length)].play();
+        // TODO: prevent repeats (keep an array of no. times played, play the least played)
+
+        let audioElems = Array.from(document.getElementsByTagName("audio")), selectionIndex = 0, spinningInterval, spinOptions = ['\\', '|', '/', '-'], spinOptionsIndex = 0;
+
+        let setPlayingStatus = (switcher) => {
+            if (switcher) {
+                spinningInterval = setInterval(function() {
+                    document.getElementById('playing-status').innerHTML = 'now playing: ' + audioElems[selectionIndex].id + " " + spinOptions[spinOptionsIndex%spinOptions.length] ;
+                    spinOptionsIndex++;
+                    if (audioElems.every(elem => elem.paused)) {
+                        setPlayingStatus(false);
+                    }
+                }, 100);
+            } else {
+                clearInterval(spinningInterval);
+                document.getElementById('playing-status').innerHTML = "paused";
             }
-        }
+        };
+
+        let play = () => {
+            if (audioElems.every(elem => elem.paused)) {
+                if (audioElems.every(elem => elem.currentTime === 0)) {
+                    selectionIndex = Math.floor(Math.random()*document.getElementsByTagName("audio").length);
+                    console.log(selectionIndex);
+                    audioElems[selectionIndex].play();
+                } else {
+                    audioElems[selectionIndex].play();
+                }
+                setPlayingStatus(true);
+            }
+        };
+
+           document.getElementById("play").addEventListener('click', play);
+
+           let pause = () => {
+               Array.from(document.getElementsByTagName("audio")).forEach((elem) => elem.pause());
+               setPlayingStatus(false);
+           };
+
+           document.getElementById("pause").addEventListener('click', pause);
+
+           let skip = () => {
+               pause(); //can't set the currentTime to 0 when the audio is still playing
+               audioElems.forEach(elem => elem.currentTime = 0);
+               play();
+           };
+
+           document.getElementById("skip").addEventListener('click', skip);
+
     </script>
 </body>
 </html>
