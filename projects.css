@@ -40,7 +40,6 @@ main {
     text-align: center;
     padding-top: 1vh;
     text-transform:uppercase;
-    font-style: italic;
     overflow: hidden;
 }
 .description {
@@ -48,6 +47,8 @@ main {
     text-align: center;
     width: 90%;
     overflow: hidden;
+    font-family: Monospace, serif;
+    font-size: 0.8em;
 }
 /*
 .projects:nth-child(even) {
