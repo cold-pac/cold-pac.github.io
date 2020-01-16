@@ -34,11 +34,12 @@ a {
     text-decoration: none;
 }
 a:hover {
-    color: black;
+    color: lemonchiffon;
     text-decoration: none;
 }
 header div:hover {
-    background-color: aquamarine;
+    //background-color: aquamarine;
+    color: aquamarine;
     cursor: pointer;
 }
 @media (orientation:portrait) {
