@@ -93,12 +93,12 @@
     <script>
         // TODO: prevent repeats (keep an array of no. times played, play the least played)
 
-        let audioElems = Array.from(document.getElementsByTagName("audio")), selectionIndex = 0, spinningInterval, spinOptions = ['\\', '|', '/', '-'], spinOptionsIndex = 0;
+        let audioElems = Array.from(document.getElementsByTagName("audio")), filteredSelectionIndex = 0, spinningInterval, spinOptions = ['\\', '|', '/', '-'], spinOptionsIndex = 0;
 
         let setPlayingStatus = (switcher) => {
             if (switcher) {
                 spinningInterval = setInterval(function() {
-                    document.getElementById('playing-status').innerHTML = 'now playing: ' + audioElems[selectionIndex].id + " " + spinOptions[spinOptionsIndex%spinOptions.length] ;
+                    document.getElementById('playing-status').innerHTML = 'now playing: ' + audioElemsFilter[filteredSelectionIndex].id + " " + spinOptions[spinOptionsIndex%spinOptions.length] ;
                     spinOptionsIndex++;
                     if (audioElems.every(elem => elem.paused)) {
                         if (audioElems.some(elem => elem.currentTime === elem.duration)) {
@@ -115,14 +115,47 @@
             }
         };
 
+        let playLog = {}, audioElemsFilter; //will keep track of number of plays
+
+        audioElems.forEach((elem) => {
+            playLog[elem.id] = 0;
+        });
+
+        console.log("The playLog: ", playLog);
+        /*the playLog is to prevent repeats and make sure songs are played an even number of times (all played before being played again)
+        audioElems (all the audio elements in the page) is filtered (using playLog) every time  the play() function is called
+        the new audioElemsFiltered array is created, from which an audio element is selected and played
+         */
+
         let play = () => {
             if (audioElems.every(elem => elem.paused)) {
                 if (audioElems.every(elem => elem.currentTime === 0)) {
-                    selectionIndex = Math.floor(Math.random()*document.getElementsByTagName("audio").length);
-                    console.log(selectionIndex);
-                    audioElems[selectionIndex].play();
+
+                    console.log("-------------------------------------");
+
+
+                    //Object.values(playLog).sort()[0]) is the lowest amount of plays for any audioElems
+
+                    audioElemsFilter = [...audioElems].filter((elem) => {
+                        return playLog[elem.id] === Object.values(playLog).sort()[0];
+                    });  //remember filter returns a new array, so don't need to copy audioElems can point directly to it if you want
+                    //first time you hit play this will filter nothing, i.e. be the same as audioElems
+
+                    console.log("playLog filtered ", audioElemsFilter);
+
+                    filteredSelectionIndex = Math.floor(Math.random()*audioElemsFilter.length);
+
+                    console.log("audio selected: ", audioElemsFilter[filteredSelectionIndex].id);
+
+                    playLog[audioElemsFilter[filteredSelectionIndex].id] += 1;
+                    //value increased in the playLog
+
+                    console.log("The playLog: ", playLog);
+
+                    audioElemsFilter[filteredSelectionIndex].play();
+
                 } else {
-                    audioElems[selectionIndex].play();
+                    audioElems[filteredSelectionIndex].play();
                 }
                 setPlayingStatus(true);
             }
