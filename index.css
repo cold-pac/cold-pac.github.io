@@ -73,6 +73,12 @@ p {
     text-align: center;
     padding-top: 0.5vh;
     padding-bottom: 0.5vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#player-options span i {
+    padding: 0.1em;
 }
 #player-options span:active {
      box-shadow: inset #282625 1px 1px 3px;
