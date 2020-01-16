@@ -30,7 +30,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: black 1px solid;
+    color: white;
 }
 .projects a:hover {
     background-color: #ccc595;

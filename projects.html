@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="projects.css">
     <title>Cold-Pac</title>
     <script>
-        let randomBG;
+
         fetch('https://api.github.com/users/cold-pac/repos')
             .then(function(response){
                  return response.json();
@@ -14,7 +14,7 @@
             .then(function(responseAsJson) {
                 console.log(responseAsJson);
                 for (let i = 0; i < responseAsJson.length; i++) {
-                    randomBG = Math.random()*1000;
+
                     if (!(/Notes/.test(responseAsJson[i].name) || /cold-pac.github.io/.test(responseAsJson[i].name) || /FullStack/.test(responseAsJson[i].name))) {
                         document.getElementById("project-container").innerHTML +=
                             `<div class = 'projects' id = ${responseAsJson[i].name}>
@@ -25,6 +25,23 @@
                              </div>`;
                     }
                 }
+
+                let projects =  Array.from(document.getElementsByClassName('projects'));
+                let colorArr = [];
+
+                function createRandomColor () {
+                    console.log('works');
+                    colorArr = [];
+                    while (colorArr.length !== 6) {
+                        colorArr.push((Math.floor(Math.random()*10)).toString());
+                    }
+                    return "#" + colorArr.join("");
+                }
+
+                projects.forEach(function(elem) {
+                    elem.style.backgroundColor = createRandomColor();
+                    console.log(elem.style.backgroundColor);
+                });
             })
             .catch(function(){
 
@@ -38,4 +55,28 @@
     <div id = "project-container"></div>
 </main>
 </body>
+<script>
+    /*
+    window.onload = () => {
+        let projects =  Array.from(document.getElementsByClassName('projects'));
+        let colorArr = [];
+        console.log(projects);
+
+        function createRandomColor () {
+            console.log('works');
+            colorArr = [];
+            while (colorArr.length !== 6) {
+                colorArr.push((Math.floor(Math.random()*10)).toString());
+            }
+            return "#" + colorArr.join("");
+        }
+
+        projects.forEach(function(elem) {
+            elem.style.backgroundColor = createRandomColor();
+            console.log(elem.style.backgroundColor);
+        });
+    };
+
+     */
+</script>
 </html>
