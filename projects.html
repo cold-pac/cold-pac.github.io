@@ -7,14 +7,28 @@
     <title>Cold-Pac</title>
     <script>
 
+        function shuffleArray (array) {
+            var j, x, i;
+            for (i = array.length - 1; i > 0; i--) {
+                j = Math.floor(Math.random() * (i + 1));
+                x = array[i];
+                array[i] = array[j];
+                array[j] = x;
+            }
+            return array;
+        }
+
+        let shuffledOrder, i;
+
         fetch('https://api.github.com/users/cold-pac/repos')
             .then(function(response){
                  return response.json();
             })
             .then(function(responseAsJson) {
-                console.log(responseAsJson);
-                for (let i = 0; i < responseAsJson.length; i++) {
+                shuffledOrder =  shuffleArray(Object.keys(responseAsJson));
 
+                for (let x = 0; x < responseAsJson.length; x++) {
+                    i = shuffledOrder[x];
                     if (!(/Notes/.test(responseAsJson[i].name) || /cold-pac.github.io/.test(responseAsJson[i].name) || /FullStack/.test(responseAsJson[i].name))) {
                         document.getElementById("project-container").innerHTML +=
                             `<div class = 'projects' id = ${responseAsJson[i].name}>
@@ -45,7 +59,7 @@
                 setInterval(() => {
                     projects.forEach(function(elem) {
                         elem.style.backgroundColor = createRandomColor();
-                        console.log(elem.style.backgroundColor);
+                        //console.log(elem.style.backgroundColor);
                     });
                 }, 2000);
             })
