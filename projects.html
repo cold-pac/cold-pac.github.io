@@ -30,7 +30,6 @@
                 let colorArr = [];
 
                 function createRandomColor () {
-                    console.log('works');
                     colorArr = [];
                     while (colorArr.length !== 6) {
                         colorArr.push((Math.floor(Math.random()*10)).toString());
@@ -40,8 +39,15 @@
 
                 projects.forEach(function(elem) {
                     elem.style.backgroundColor = createRandomColor();
-                    console.log(elem.style.backgroundColor);
+                    //console.log(elem.style.backgroundColor);
                 });
+
+                setInterval(() => {
+                    projects.forEach(function(elem) {
+                        elem.style.backgroundColor = createRandomColor();
+                        console.log(elem.style.backgroundColor);
+                    });
+                }, 2000);
             })
             .catch(function(){
 
@@ -56,27 +62,6 @@
 </main>
 </body>
 <script>
-    /*
-    window.onload = () => {
-        let projects =  Array.from(document.getElementsByClassName('projects'));
-        let colorArr = [];
-        console.log(projects);
-
-        function createRandomColor () {
-            console.log('works');
-            colorArr = [];
-            while (colorArr.length !== 6) {
-                colorArr.push((Math.floor(Math.random()*10)).toString());
-            }
-            return "#" + colorArr.join("");
-        }
-
-        projects.forEach(function(elem) {
-            elem.style.backgroundColor = createRandomColor();
-            console.log(elem.style.backgroundColor);
-        });
-    };
-
-     */
+   //can't do bgColors here because API call takes a few seconds to load and this is executed immediately/ window.onload
 </script>
 </html>
