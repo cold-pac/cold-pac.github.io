@@ -46,7 +46,7 @@ h1 {
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: cadetblue;
+    background-color: #535b5b;
 }
 .img-container:hover .overlay {
     opacity: 1;
