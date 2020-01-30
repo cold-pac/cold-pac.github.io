@@ -27,6 +27,7 @@ ol {
     background: steelblue;
     padding: 20px;
     font-family: Bahnschrift, serif;
+    overflow: auto;
 }
 ol li {
     background: lightsteelblue;
