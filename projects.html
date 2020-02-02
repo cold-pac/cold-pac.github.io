@@ -29,7 +29,7 @@
 
                 for (let x = 0; x < responseAsJson.length; x++) {
                     i = shuffledOrder[x];
-                    if (!(/Notes/.test(responseAsJson[i].name) || /cold-pac.github.io/.test(responseAsJson[i].name) || /FullStack/.test(responseAsJson[i].name))) {
+                    if (!(/Notes/.test(responseAsJson[i].name) || /cold-pac.github.io/.test(responseAsJson[i].name) || /FullStack/.test(responseAsJson[i].name) || /Fundoscopy/.test(responseAsJson[i].name)))) {
                         document.getElementById("project-container").innerHTML +=
                             `<div class = 'projects' id = ${responseAsJson[i].name}>
                                 <a href='https://cold-pac.github.io/${responseAsJson[i].name}' target="_blank">
