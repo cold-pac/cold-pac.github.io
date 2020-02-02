@@ -42,7 +42,10 @@ main {
     background: coral;
 }
 #note-index-list li:nth-child(5n) {
-    background: indianred;
+    background: grey;
+}
+#note-index-list li:nth-child(6n) {
+    background: skyblue;
 }
 @media(orientation:portrait) {
     header div {
