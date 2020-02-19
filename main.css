@@ -12,6 +12,7 @@ header {
     background-color: #A5B5B5;
     padding: 0.25vh;
     margin: 0;
+    text-transform: uppercase;
 }
 header div {
     padding: 1.25vh;
@@ -28,6 +29,7 @@ header div a {
     padding: 1.25vh;
     text-decoration: none;
     color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 a {
     color: black;
