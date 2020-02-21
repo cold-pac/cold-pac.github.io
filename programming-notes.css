@@ -21,7 +21,7 @@ main {
     text-align: center;
     color: white;
     font-size: 2em;
-    font-family: Monospace, serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, Monospace, serif;
 }
 #note-index-list li:hover {
     //text-decoration: underline;

@@ -26,7 +26,7 @@ ol {
     list-style-image: url("files/favicon-16x16.png");
     background: steelblue;
     padding: 20px;
-    font-family: Bahnschrift, serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, Bahnschrift, serif;
     overflow: auto;
 }
 ol li {
