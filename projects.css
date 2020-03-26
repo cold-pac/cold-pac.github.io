@@ -1,3 +1,4 @@
+
 main {
     height: 100%;
     width: 100%;
@@ -11,7 +12,7 @@ main {
     height: 80vh;
     width: 80vh;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     grid-gap: 0;
     overflow: hidden;
 }
