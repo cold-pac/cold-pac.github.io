@@ -3,13 +3,14 @@ html, body {
     width: 100%;
     margin: 0;
     overflow-x: hidden;
+    background: url("https://avatars0.githubusercontent.com/u/22424347?s=460&v=4");
 }
 header {
     width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    background-color: rgb(30, 77, 131);
+    background-color: rgb(122, 125, 129);
     padding: 0.25vh;
     margin: 0;
     text-transform: uppercase;
