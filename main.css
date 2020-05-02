@@ -3,7 +3,8 @@ html, body {
     width: 100%;
     margin: 0;
     overflow-x: hidden;
-    background: url("https://avatars0.githubusercontent.com/u/22424347?s=460&v=4");
+    /* background: url("https://avatars0.githubusercontent.com/u/22424347?s=460&v=4"); */
+    background: black;
 }
 header {
     width: 100vw;
